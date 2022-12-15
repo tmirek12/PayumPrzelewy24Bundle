@@ -33,7 +33,7 @@ final class CaptureAction implements ApiAwareInterface, ActionInterface, Gateway
         $this->paymentService = $paymentService;
     }
 
-    public function execute($request): void
+    public function execute($request): string
     {
         /** @var Capture $request */
         RequestNotSupportedException::assertSupports($this, $request);
