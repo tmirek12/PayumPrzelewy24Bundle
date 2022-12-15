@@ -64,10 +64,10 @@ final class CaptureAction implements ApiAwareInterface, ActionInterface, Gateway
                     throw PaymentException::newInstanceFromErrorResponse($response);
                 }
             }
-            throw new HttpRedirect($model['urlPayment']);
+            return $model['urlPayment'];
         }
         if (!$this->api->invalidateCaptureToken()) {
-            throw new HttpRedirect($token->getAfterUrl());
+            return $token->getAfterUrl();
         }
     }
 
