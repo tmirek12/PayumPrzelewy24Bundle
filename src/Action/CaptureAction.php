@@ -78,6 +78,6 @@ final class CaptureAction implements ApiAwareInterface, ActionInterface, Gateway
 
     public function supports($request): bool
     {
-        return $request instanceof Capture && $request->getModel() instanceof ArrayObject;
+        return $request instanceof Capture;
     }
 }
